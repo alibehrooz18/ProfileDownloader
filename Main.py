@@ -21,6 +21,11 @@ def hello():
     # print("Hello World")
 
 
+def clear():
+    inputs.delete(0, END)
+    label.config(text="Hello World")
+
+
 # button design
 button = Button(window, text="click here", fg="blue", command=hello)
 button.pack()   # we can use button.place(x = n, y = n)
@@ -28,10 +33,12 @@ button.pack()   # we can use button.place(x = n, y = n)
 button = Button(window, text="close", fg="red", command=window.quit)
 button.place(x=30, y=30)
 
+button = Button(window, text="clear", fg="blue", command=clear)
+button.place(x=65, y=30)
 
 # input
 inputs = Entry(window)
-inputs.pack()
+inputs.place(x=240, y=60)
 
 
 window.mainloop()
